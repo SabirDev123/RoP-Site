@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Republic of Petrol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dhaka Date Box -->
+    <div id="date-box">
+        <div id="day-display"></div>
+        <div id="date-display"></div>
+    </div>
+
+    <header>
+        <h1>⛽ Republic of Petrol</h1>
+        <p>Official Government Portal</p>
+    </header>
+
+    <nav>
+        <a href="#flag">Flag</a>
+        <a href="#about">About</a>
+        <a href="#clock">Clock</a>
+        <a href="#stats">Fuel Reserve</a>
+    </nav>
+
+    <section class="card" id="flag">
+        <h2>National Flag</h2>
+        <img src="flag.png" alt="Republic of Petrol Flag">
+    </section>
+
+    <section class="card" id="about">
+        <h2>About The Republic</h2>
+        <p>
+            The Republic of Petrol is a micronation dedicated to
+            speed, engineering, technology, motorsport, and automotive
+            excellence.
+        </p>
+
+        <h2>National Motto</h2>
+        <p><strong>We are the Petrols.</strong></p>
+    </section>
+
+    <section class="card" id="clock">
+        <h2>National Clock </h2>
+
+        <div class="clock">
+            <div class="hand hour" id="hour"></div>
+            <div class="hand minute" id="minute"></div>
+            <div class="hand second" id="second"></div>
+            <div class="center"></div>
+        </div>
+
+        <p id="digital-clock"></p>
+    </section>
+
+    <section class="card" id="stats">
+        <h2>National Petrol Reserve</h2>
+
+        <div class="gauge-container">
+
+            <div class="labels">
+                <span>F</span>
+                <span>1/2</span>
+                <span>E</span>
+            </div>
+
+            <div class="tank">
+                <div class="fuel" id="fuel-level"></div>
+
+                <div class="tick tick-top"></div>
+                <div class="tick tick-mid"></div>
+                <div class="tick tick-bot"></div>
+            </div>
+
+        </div>
+
+        <p id="petrol-counter">
+            0 Litres (Reserve State: Less than half full)
+        </p>
+    </section>
+
+    <p class="credit">
+        Website Designed, Developed, Debugged, and Maintained by Sabir Shakirin Chowdhury
+    </p>
+
+    <footer>
+        © 2026 Republic of Petrol. All Rights Reserved.
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
