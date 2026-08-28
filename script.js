@@ -1,5 +1,5 @@
 let petrol = 0;
-const maxPetrol = 275;
+const maxPetrol = 150000;
 
 // Clock + Date (Dhaka)
 function updateClock() {
@@ -48,7 +48,7 @@ function updateClock() {
 // Fuel Reserve
 function updateFuel() {
     if (petrol < maxPetrol) {
-        petrol++;
+        petrol = Math.min(petrol + 0.05, maxPetrol);
     }
 
     const percent = (petrol / maxPetrol) * 100;
@@ -67,11 +67,34 @@ function updateFuel() {
     }
 
     document.getElementById("petrol-counter").textContent =
-        `${petrol} Litres (Reserve State: ${state})`;
+        `${petrol.toFixed(2)} Litres (Reserve State: ${state})`;
 }
 
+// Initial updates
 updateClock();
 updateFuel();
 
+// Update clock every second
 setInterval(updateClock, 1000);
-setInterval(updateFuel, 1000);
+
+// Add 0.05 litres every minute
+setInterval(updateFuel, 60000);
+
+// Service Worker Registration
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+            .then((registration) => {
+                console.log(
+                    "[RoP] Service Worker registered successfully!",
+                    registration.scope
+                );
+            })
+            .catch((error) => {
+                console.error(
+                    "[RoP] Service Worker registration failed:",
+                    error
+                );
+            });
+    });
+}
